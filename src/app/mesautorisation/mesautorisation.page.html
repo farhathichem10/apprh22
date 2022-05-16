@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mes Autorisation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  >
+  <ion-text color="danger">
+    <h1>Autorisation</h1>
+  </ion-text>
+  <section class="full-width">
+    
+    <ion-button expand="full" routerLink="/demandeautorisation" color="primary">Demande Autorisation</ion-button>
+    <ion-button expand="full"routerLink="/mesautorisation" color="primary">Mes Autorisation</ion-button>
+  </section>
+
+  <ion-grid class="ion-margin">
+      
+    <ion-searchbar placeholder="Search..." [(ngModel)]="term" animated="true"></ion-searchbar>
+
+    <ion-row>
+    
+      <ion-col size="2">#</ion-col>
+      <ion-col size="2">Nom</ion-col>
+      <ion-col size="2">qte</ion-col>
+      <ion-col size="2">action</ion-col>
+     
+    </ion-row>
+    <ion-row *ngFor="let p of prod | filter:term |paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+     
+      <ion-col size="2">dffffffffffffffff</ion-col>
+      <ion-col size="2">gffffffffffff</ion-col>
+      <ion-col size="2">dfgfdgggggggggd</ion-col>
+      <ion-col size="2"><ion-button (click)="delete(p.id)" color="danger">remove</ion-button> 
+        <ion-button routerLink="/editprod/{{p.id}}" color="primary">edit</ion-button></ion-col>
+      
+    </ion-row>
+  </ion-grid>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+  <ion-item lines="none">
+   
+    
+    
+  </ion-item>
+</ion-content>

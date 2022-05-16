@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+     Ressource Humain
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-text color="danger">
+    <h1>Mes missions</h1>
+  </ion-text>
+  <section class="full-width">
+    
+    <ion-button expand="full" routerLink="/demandemission" color="danger">Demande mission</ion-button>
+    <ion-button expand="full"routerLink="/mesmission" color="danger">Mes mission</ion-button>
+    <ion-button expand="full"routerLink="/" color="danger">Approbation Sup.Hiérchique</ion-button>
+    <ion-button expand="full"routerLink="/" color="danger">Approbation Sup.Hiérchique directe</ion-button>
+  </section>
+
+  <ion-grid class="ion-margin">
+      
+    <ion-searchbar placeholder="Search..." [(ngModel)]="term" animated="true"></ion-searchbar>
+
+    <ion-row>
+    
+      <ion-col size="2">#</ion-col>
+      <ion-col size="2">Nom</ion-col>
+      <ion-col size="2">qte</ion-col>
+      <ion-col size="2">action</ion-col>
+     
+    </ion-row>
+    <ion-row *ngFor="let p of prod | filter:term |paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+     
+      <ion-col size="2">dffffffffffffffff</ion-col>
+      <ion-col size="2">gffffffffffff</ion-col>
+      <ion-col size="2">dfgfdgggggggggd</ion-col>
+      <ion-col size="2"><ion-button (click)="delete(p.id)" color="danger">remove</ion-button> 
+        <ion-button routerLink="/editprod/{{p.id}}" color="primary">edit</ion-button></ion-col>
+      
+    </ion-row>
+  </ion-grid>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+  <ion-item lines="none">
+   
+    
+    
+  </ion-item>
+</ion-content>

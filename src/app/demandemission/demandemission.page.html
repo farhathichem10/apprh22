@@ -1,0 +1,38 @@
+<ion-content  color="primary">
+  <form  #form="ngForm" (ngSubmit)="createProvider(form)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>Demande de mission</h3>
+          </div>
+          <div padding><ion-label>Premier jour</ion-label>
+            <ion-item>
+              <ion-input  name="nom" id="nom" type="date" placeholder="Premier jour" ngModel required></ion-input>
+            </ion-item>
+            <ion-label>Dernier jour</ion-label>
+            <ion-item>
+              <ion-input name="qte" id="qte" type="date" placeholder="Dernier jour" ngModel required></ion-input>
+            </ion-item>
+            <ion-label>Heure  debut</ion-label>
+            <ion-item>
+              <ion-input  name="Heuredebut" id="Heuredebut" type="time" placeholder="Heure debut" ngModel required></ion-input>
+            </ion-item>
+            <ion-label>Heure fin</ion-label>
+            <ion-item>
+              <ion-input  name="Heurefin" id="Heurefin" type="time" placeholder="Heure fin" ngModel required></ion-input>
+            </ion-item><ion-label>Description</ion-label>
+            <ion-item>
+              <ion-textarea  name="Description" id="Description" type="text" placeholder="Description" ngModel required></ion-textarea>
+            </ion-item>
+           
+           
+          </div>
+          <div padding>
+            <ion-button  size="large" type="submit" [disabled]="form.invalid" expand="block">Register</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

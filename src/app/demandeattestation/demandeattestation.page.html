@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>attestation</ion-title>
+  </ion-toolbar>
+</ion-header><ion-content  >
+  <form   (ngSubmit)="add()">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>Demande d'attestation</h3>
+          </div>
+          <div padding><ion-label>Attestation</ion-label>
+            <ion-item>
+              <ion-label>Attestation</ion-label>
+              <ion-select placeholder="Select One">
+                <ion-select-option value="f">Stage</ion-select-option>
+                <ion-select-option value="m">Travail</ion-select-option>
+                <ion-select-option value="a">Titularisation</ion-select-option>
+                <ion-select-option value="z">Titre_de_congée</ion-select-option>
+                <ion-select-option value="e">Ordre_de_Mission</ion-select-option>
+                <ion-select-option value="r">Fiche de paie</ion-select-option>
+                <ion-select-option value="t">Salaire</ion-select-option>
+                <ion-select-option value="y">Certificat de Paie</ion-select-option>
+
+
+
+
+
+
+              </ion-select>
+            </ion-item>
+           
+           
+           
+          </div>
+          <div padding>
+            <ion-button  size="large" type="submit" [disabled]="form.invalid" expand="block">Register</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="primary">
+      <ion-title>
+        Ionic Table using Ionic grid component
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-margin">
+    <ion-grid class="ion-margin">
+      
+      <ion-searchbar placeholder="Search..." [(ngModel)]="term" animated="true"></ion-searchbar>
+
+      <ion-row>
+      
+        <ion-col>#</ion-col>
+        <ion-col>Nom</ion-col>
+        <ion-col>qte</ion-col>
+        <ion-col>action</ion-col>
+       
+      </ion-row>
+      <ion-row *ngFor="let p of prod | filter:term |paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+       
+        <ion-col>{{ p.id }}</ion-col>
+        <ion-col>{{ p.nom }}</ion-col>
+        <ion-col>{{ p.qte }}</ion-col>
+        <ion-col><ion-button (click)="delete(p.id)" color="danger">remove</ion-button> 
+          <ion-button routerLink="/editprod/{{p.id}}" color="primary">edit</ion-button></ion-col>
+        
+      </ion-row>
+    </ion-grid>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  
+    <ion-item lines="none">
+     
+      
+      
+    </ion-item>
+  </ion-content>
